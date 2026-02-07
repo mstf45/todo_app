@@ -239,7 +239,7 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 **Your Name**
 - Email: mustafa452017@gmail.com
-- GitHub: [@yourusername](https://github.com/mstf45)
+- GitHub: [@mstf45](https://github.com/mstf45)
 
 ## 🙏 Teşekkürler
 
