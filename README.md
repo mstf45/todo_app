@@ -238,8 +238,8 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 ## 👨‍💻 Geliştirici
 
 **Your Name**
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: mustafa452017@gmail.com
+- GitHub: [@yourusername](https://github.com/mstf45)
 
 ## 🙏 Teşekkürler
 
@@ -262,10 +262,3 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 - [ ] Wear OS desteği
 
 ---
-
-**Not:** Bu uygulama Google Play Store ve App Store'da yayınlanmaya hazırdır. Yayınlamadan önce:
-1. Firebase production rules'larını güncelleyin
-2. App Store/Play Store listing'lerini hazırlayın
-3. Privacy Policy ve Terms of Service oluşturun
-4. Uygulama iconunu ve splash screen'i güncelleyin
-5. Release keystore oluşturun ve güvenli saklayın
