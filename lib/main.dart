@@ -10,13 +10,8 @@ import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Firebase'i başlat
   await Firebase.initializeApp();
-
-  // Türkçe tarih formatını başlat
   await initializeDateFormatting('tr_TR', null);
-
   runApp(const MyApp());
 }
 
