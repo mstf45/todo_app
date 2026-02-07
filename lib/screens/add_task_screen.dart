@@ -175,7 +175,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
             const SizedBox(height: 16),
 
-            // Açıklama
             TextFormField(
               controller: _descriptionController,
               maxLines: 4,
@@ -188,7 +187,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
             const SizedBox(height: 24),
 
-            // Kategori
             Text(
               'Kategori',
               style: Theme.of(
@@ -215,7 +213,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
             const SizedBox(height: 24),
 
-            // Öncelik
             Text(
               'Öncelik',
               style: Theme.of(
@@ -250,7 +247,6 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
             const SizedBox(height: 24),
 
-            // Son Tarih
             Text(
               'Son Tarih',
               style: Theme.of(
@@ -301,10 +297,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 ),
               ),
             ),
-
             const SizedBox(height: 32),
 
-            // Kaydet Butonu
             SizedBox(
               height: 56,
               child: ElevatedButton(

@@ -68,12 +68,10 @@ class TaskCard extends StatelessWidget {
 
               const SizedBox(width: 12),
 
-              // Görev İçeriği
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Başlık
                     Text(
                       task.title,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -101,10 +99,8 @@ class TaskCard extends StatelessWidget {
 
                     const SizedBox(height: 8),
 
-                    // Meta Bilgiler
                     Row(
                       children: [
-                        // Kategori
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,
@@ -127,10 +123,7 @@ class TaskCard extends StatelessWidget {
                             ],
                           ),
                         ),
-
                         const SizedBox(width: 8),
-
-                        // Son Tarih
                         if (task.dueDate != null)
                           Container(
                             padding: const EdgeInsets.symmetric(
@@ -167,10 +160,7 @@ class TaskCard extends StatelessWidget {
                   ],
                 ),
               ),
-
               const SizedBox(width: 12),
-
-              // Öncelik İndikatörü
               Container(
                 width: 4,
                 height: 40,

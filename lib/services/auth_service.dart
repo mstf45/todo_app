@@ -5,14 +5,10 @@ import '../models/user_model.dart';
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
-  // Mevcut kullanıcı stream
   Stream<User?> get authStateChanges => _auth.authStateChanges();
 
-  // Mevcut kullanıcı
   User? get currentUser => _auth.currentUser;
 
-  // Email ile kayıt
   Future<UserCredential?> signUpWithEmail({
     required String email,
     required String password,
@@ -24,10 +20,8 @@ class AuthService {
         password: password,
       );
 
-      // Kullanıcı profilini güncelle
       await credential.user?.updateDisplayName(displayName);
 
-      // Firestore'da kullanıcı oluştur
       if (credential.user != null) {
         await _createUserInFirestore(credential.user!, displayName);
       }
@@ -38,7 +32,6 @@ class AuthService {
     }
   }
 
-  // Email ile giriş
   Future<UserCredential?> signInWithEmail({
     required String email,
     required String password,
@@ -52,8 +45,6 @@ class AuthService {
       throw _handleAuthException(e);
     }
   }
-
-  // Firestore'da kullanıcı oluştur
   Future<void> _createUserInFirestore(User user, String displayName) async {
     final userModel = UserModel(
       id: user.uid,
@@ -69,7 +60,6 @@ class AuthService {
         .set(userModel.toFirestore());
   }
 
-  // Kullanıcı bilgilerini getir
   Future<UserModel?> getUserData(String userId) async {
     try {
       final doc = await _firestore.collection('users').doc(userId).get();
@@ -81,8 +71,6 @@ class AuthService {
       return null;
     }
   }
-
-  // Şifre sıfırlama
   Future<void> resetPassword(String email) async {
     try {
       await _auth.sendPasswordResetEmail(email: email);
@@ -91,12 +79,10 @@ class AuthService {
     }
   }
 
-  // Çıkış
   Future<void> signOut() async {
     await _auth.signOut();
   }
 
-  // Hata mesajlarını işle
   String _handleAuthException(FirebaseAuthException e) {
     switch (e.code) {
       case 'weak-password':

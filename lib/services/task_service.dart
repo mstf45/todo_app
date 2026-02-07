@@ -4,7 +4,6 @@ import '../models/task.dart';
 class TaskService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  // Kullanıcının tüm görevlerini getir
   Stream<List<Task>> getUserTasks(String userId) {
     return _firestore
         .collection('tasks')
@@ -17,7 +16,6 @@ class TaskService {
         );
   }
 
-  // Tamamlanmamış görevleri getir
   Stream<List<Task>> getIncompleteTasks(String userId) {
     return _firestore
         .collection('tasks')
@@ -31,7 +29,6 @@ class TaskService {
         );
   }
 
-  // Tamamlanmış görevleri getir
   Stream<List<Task>> getCompletedTasks(String userId) {
     return _firestore
         .collection('tasks')
@@ -45,7 +42,6 @@ class TaskService {
         );
   }
 
-  // Kategoriye göre görevleri getir
   Stream<List<Task>> getTasksByCategory(String userId, TaskCategory category) {
     return _firestore
         .collection('tasks')
@@ -59,7 +55,6 @@ class TaskService {
         );
   }
 
-  // Yeni görev ekle
   Future<void> addTask(Task task) async {
     try {
       await _firestore.collection('tasks').add(task.toFirestore());
@@ -69,7 +64,6 @@ class TaskService {
     }
   }
 
-  // Görevi güncelle
   Future<void> updateTask(Task task) async {
     try {
       await _firestore
@@ -81,7 +75,6 @@ class TaskService {
     }
   }
 
-  // Görevi sil
   Future<void> deleteTask(String taskId, String userId) async {
     try {
       await _firestore.collection('tasks').doc(taskId).delete();
@@ -91,7 +84,6 @@ class TaskService {
     }
   }
 
-  // Görevi tamamla/tamamlama
   Future<void> toggleTaskCompletion(Task task) async {
     try {
       final updatedTask = task.copyWith(isCompleted: !task.isCompleted);
@@ -105,7 +97,6 @@ class TaskService {
     }
   }
 
-  // Kullanıcı istatistiklerini güncelle
   Future<void> _updateUserStats(
     String userId, {
     required bool increment,
@@ -116,7 +107,6 @@ class TaskService {
     });
   }
 
-  // Kullanıcı tamamlama istatistiklerini güncelle
   Future<void> _updateUserCompletionStats(
     String userId, {
     required bool increment,
@@ -127,7 +117,6 @@ class TaskService {
     });
   }
 
-  // Bugünün görevlerini getir
   Stream<List<Task>> getTodayTasks(String userId) {
     final now = DateTime.now();
     final startOfDay = DateTime(now.year, now.month, now.day);
@@ -148,7 +137,6 @@ class TaskService {
         );
   }
 
-  // Önceliğe göre görevleri getir
   Stream<List<Task>> getTasksByPriority(String userId, TaskPriority priority) {
     return _firestore
         .collection('tasks')
