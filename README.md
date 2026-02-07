@@ -233,7 +233,7 @@ Uygulama Türkçe dilini desteklemektedir. Tarih formatları `intl` paketi ile s
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+Bu proje açık kaynaklıdır ve özgürce değiştirilebilir. / This project is open-source and available for modification.
 
 ## 👨‍💻 Geliştirici
 
